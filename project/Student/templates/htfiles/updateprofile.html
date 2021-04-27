@@ -1,0 +1,30 @@
+{% extends 'htfiles/header.html' %}
+{% block title %}Update Profile{% endblock %}
+{% block content %}
+<div class="conatiner">
+	<div class="card col-md-6 mx-auto mt-4 shadow-lg">
+		<h3 class="bg-light text-danger text-center mt-2 border rounded">Update your profile</h3>
+		<div class="card-body">
+			<form method="POST" enctype="multipart/form-data">
+				{{us.as_p}}
+				{{e.as_p}}
+				{% csrf_token %}
+				<!-- <table class="table table-borderless">
+					{% for k in us %}
+					<tr>
+						<td>{{k}}</td>
+					</tr>
+					{% endfor %}
+
+					{% for j in imp %}
+					<tr>
+						<td>{{j}}</td>
+					</tr>
+					{% endfor %}
+				</table> -->
+				<input type="submit" value="Update" class="btn btn-block btn-secondary form-control my-2">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
